@@ -34,7 +34,7 @@ if command:
         with st.chat_message("bot"):
             st.write("I am a chat bot ,my name is 'Jerry'!!")
             st.session_state.message.append({"role":"uer","message":"I am a chat bot ,my name is 'Jerry'!!"})
-     elif "Who is your favorite persion?" in command:
+    elif "Who is your favorite persion?" in command:
         with st.chat_message("bot"):
             st.write("Saranya kullachi 🥱!!")
             st.session_state.message.append({"role":"uer","message":"I am a chat bot ,my name is 'Jerry'!!"})
