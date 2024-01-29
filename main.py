@@ -10,7 +10,7 @@ def ai(txt):
     response = model.generate_content("from now your Jerry "+txt)
     return response.text
 
-st.title("Welcome to Jerry Bot")
+st.title("Welcome to Jerry ChatBot")
 
 command = st.chat_input("How can I help you?")
 
