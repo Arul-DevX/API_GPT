@@ -26,7 +26,7 @@ if command:
     with st.chat_message("user"):
         st.write(command)
         st.session_state.message.append({"role":"uer","message":command})
-    if "hai,Hi"in command:
+    if "hai"in command:
         with st.chat_message("bot"):
             st.write("Hello there how can I help you !!!....😃")
             st.session_state.message.append({"role":"uer","message":"Hello there how can I help you !!!....😃"})
