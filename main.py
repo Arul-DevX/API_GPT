@@ -10,7 +10,7 @@ def ai(txt):
     response = model.generate_content(" Jerry "+txt)
     return response.text
 
-st.title("Welcome to Jerry ChatBot")
+st.title(" Chat with AI Assistant")
 
 command = st.chat_input("How can I help you?")
 
@@ -33,11 +33,11 @@ if command:
     elif "Who are you?" in command:
         with st.chat_message("bot"):
             st.write("I am a chat bot ,my name is 'Jerry'!!")
-            st.session_state.message.append({"role":"uer","message":"I am a chat bot ,my name is 'Jerry'!!"})
+            st.session_state.message.append({"role":"uer","message":"I am a chat bot.})
     elif "what are you doing?" in command:
         with st.chat_message("bot"):
             st.write("I am waiting for your questions!!")
-            st.session_state.message.append({"role":"uer","message":"I am a chat bot ,my name is 'Jerry'!!"})
+            st.session_state.message.append({"role":"uer","message":"Waiting for your Question"})
     else:
           with st.chat_message("bot"):
             data=ai(command)
