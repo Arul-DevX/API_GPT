@@ -14,9 +14,6 @@ def ai(txt):
 col1, col2 = st.columns([1, 4])
 with col2:
     st.title("Chat with AI Assistant")
-
-if st.markdown('[Home](https://example.com)', unsafe_allow_html=True):
-    st.experimental_rerun()
 command = st.chat_input("How can I help you?")
 
 if "message" not in st.session_state:
@@ -48,5 +45,6 @@ if command:
             data=ai(command)
             st.write(data)
             st.session_state.message.append({"role":"uer","message":data})       
-
+if st.markdown('[Home](https://example.com)', unsafe_allow_html=True):
+    st.experimental_rerun()
 
