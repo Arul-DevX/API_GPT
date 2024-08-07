@@ -9,7 +9,8 @@ def ai(txt):
     model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(" AI Assistant "+txt)
     return response.text
-
+if st.markdown('[Home](https://example.com)', unsafe_allow_html=True):
+    st.experimental_rerun()
 # Layout with image and title
 col1, col2 = st.columns([1, 4])
 with col2:
