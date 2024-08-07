@@ -12,8 +12,6 @@ def ai(txt):
 
 # Layout with image and title
 col1, col2 = st.columns([1, 4])
-with col1:
-    st.image("https://github.com/Arul28032003/JerryBot/blob/main/chatbot.png", width=80)  # Adjust URL and width as needed
 with col2:
     st.title("Chat with AI Assistant")
 
