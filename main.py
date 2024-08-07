@@ -45,6 +45,5 @@ if command:
             data=ai(command)
             st.write(data)
             st.session_state.message.append({"role":"uer","message":data})       
-if st.markdown('[Home](https://example.com)', unsafe_allow_html=True):
-    st.experimental_rerun()
+
 
