@@ -7,7 +7,7 @@ def ai(txt):
         if 'generateContent' in m.supported_generation_methods:
             print(m.name)
     model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(" Jerry "+txt)
+    response = model.generate_content(" AI Assistant "+txt)
     return response.text
 
 st.title(" Chat with AI Assistant")
