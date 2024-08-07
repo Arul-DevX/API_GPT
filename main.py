@@ -10,7 +10,12 @@ def ai(txt):
     response = model.generate_content(" AI Assistant "+txt)
     return response.text
 
-st.title(" Chat with AI Assistant")
+# Layout with image and title
+col1, col2 = st.columns([1, 4])
+with col1:
+    st.image("https://raw.githubusercontent.com/your-username/your-repo/main/path/to/your/image.jpg", width=80)  # Adjust URL and width as needed
+with col2:
+    st.title("Chat with AI Assistant")
 
 command = st.chat_input("How can I help you?")
 
