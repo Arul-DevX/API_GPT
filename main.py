@@ -8,7 +8,7 @@ client = OpenAI(
 )
 
 # Title
-st.title("💬 Chat with Jerry (via OpenRouter)")
+st.title("Chat with AI(OpenRouter)")
 
 # Initialize session
 if "messages" not in st.session_state:
