@@ -1,41 +1,38 @@
 import streamlit as st
-import google.generativeai as genai
+import openai
 
-genai.configure(api_key=st.secrets["gemini_api"])
+# Configure OpenRouter API
+openai.api_key = st.secrets["openrouter_api"]
+openai.api_base = "https://openrouter.ai/api/v1"
 
-def ai(txt):
-    model = genai.GenerativeModel('models/gemini-1.5-pro')  # ✅ Correct model name
-    response = model.generate_content("AI Assistant " + txt)
-    return response.text
+# Initialize session state
+if "messages" not in st.session_state:
+    st.session_state.messages = [{"role": "system", "content": "You are Jerry, a helpful assistant."}]
 
-# Layout with image and title
-col1, col2 = st.columns([1, 4])
-with col2:
-    st.title("Chat with AI Assistant")
+st.title("🤖 Jerry - Chatbot using OpenRouter")
 
-command = st.chat_input("How can I help you?")
+# Chat input
+user_input = st.chat_input("Ask Jerry anything...")
 
-if "message" not in st.session_state:
-    st.session_state.message = []
+# Show past messages
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
 
-for chat in st.session_state.message:
-    with st.chat_message(chat["role"]):  # ✅ Use correct role
-        st.write(chat["message"])
+# Process new message
+if user_input:
+    st.session_state.messages.append({"role": "user", "content": user_input})
 
-if command:
     with st.chat_message("user"):
-        st.write(command)
-        st.session_state.message.append({"role": "user", "message": command})  # ✅ Fix spelling
+        st.markdown(user_input)
 
-    if "hai" in command:
-        reply = "Hello there, how can I help you! 😃"
-    elif "Who are you?" in command:
-        reply = "I am a chat bot, my name is 'Jerry'!!"
-    elif "what are you doing?" in command:
-        reply = "I am waiting for your questions!!"
-    else:
-        reply = ai(command)
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            response = openai.ChatCompletion.create(
+                model="mistralai/mistral-7b-instruct",  # Or try: meta-llama/llama-3-8b-instruct
+                messages=st.session_state.messages,
+            )
+            reply = response.choices[0].message["content"]
+            st.markdown(reply)
 
-    with st.chat_message("bot"):
-        st.write(reply)
-        st.session_state.message.append({"role": "bot", "message": reply})  # ✅ Fix spelling
+    st.session_state.messages.append({"role": "assistant", "content": reply})
