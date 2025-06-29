@@ -1,38 +1,38 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 
-# Configure OpenRouter API
-openai.api_key = st.secrets["openrouter_api"]
-openai.api_base = "https://openrouter.ai/api/v1"
+# Setup OpenRouter (new openai client)
+client = OpenAI(
+    api_key=st.secrets["openrouter_api"],
+    base_url="https://openrouter.ai/api/v1"
+)
 
-# Initialize session state
+# Chat UI
+st.title("Chatbot")
+
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": "You are Jerry, a helpful assistant."}]
 
-st.title("🤖 Jerry - Chatbot using OpenRouter")
+user_input = st.chat_input("Ask something...")
 
-# Chat input
-user_input = st.chat_input("Ask Jerry anything...")
-
-# Show past messages
+# Show history
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# Process new message
+# Handle new input
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
-
     with st.chat_message("user"):
         st.markdown(user_input)
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = openai.ChatCompletion.create(
-                model="mistralai/mistral-7b-instruct",  # Or try: meta-llama/llama-3-8b-instruct
-                messages=st.session_state.messages,
+            chat_completion = client.chat.completions.create(
+                model="mistralai/mistral-7b-instruct",  # You can change model
+                messages=st.session_state.messages
             )
-            reply = response.choices[0].message["content"]
+            reply = chat_completion.choices[0].message.content
             st.markdown(reply)
 
     st.session_state.messages.append({"role": "assistant", "content": reply})
