@@ -53,6 +53,6 @@ jerrybot/
 
 
 ## 👨‍💻 Author
-- Built by Scarlet ✨ – Data Analyst & AI Enthusiast.
+- Built by Arul ✨ – Data Analyst & AI Enthusiast.
 - Feel free to connect on [LinkedIn 🚀](https://linkedin.com/in/arulraman)
 
