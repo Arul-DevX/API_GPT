@@ -14,12 +14,13 @@ It lets you chat with different open-source and premium AI models in a clean web
 ---
 
 ## 📂 Project Structure
+```bash
 jerrybot/
 ├── main.py # Streamlit app
 ├── requirements.txt # Dependencies
 └── .streamlit/
 └── secrets.toml # API keys (DO NOT commit to GitHub!)
-
+```
 ---
 
 ## 🔑 Setup Instructions
