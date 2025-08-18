@@ -1,4 +1,4 @@
-# 🤖 JerryBot – AI Chat App (OpenRouter + Streamlit)
+# JerryBot – AI Chat App (OpenRouter + Streamlit)
 
 JerryBot is a simple AI chatbot built with [Streamlit](https://streamlit.io/) and [OpenRouter](https://openrouter.ai).  
 It lets you chat with different open-source and premium AI models in a clean web UI.
