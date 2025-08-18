@@ -45,7 +45,7 @@ jerrybot/
   ```
 ## 🌐 Deployment
 - Streamlit Cloud: Connect your GitHub repo, add API key in project settings → Secrets.
-## 📸 Screenshot
+
 ## 📸 Screenshot
 
 ![Demo Screenshot](https://raw.githubusercontent.com/Arul-DevX/API_GPT/main/Screenshot%202025-08-18%20205244.png)
@@ -54,15 +54,5 @@ jerrybot/
 
 ## 👨‍💻 Author
 - Built by Scarlet ✨ – Data Analyst & AI Enthusiast.
-- Feel free to connect on LinkedIn 🚀
+- Feel free to connect on [LinkedIn 🚀](linkedin.com/in/arulraman)
 
-
-
-
-
-
-
-
-
-
-Ask ChatGPT
