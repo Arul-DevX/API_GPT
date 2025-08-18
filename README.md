@@ -54,5 +54,5 @@ jerrybot/
 
 ## 👨‍💻 Author
 - Built by Scarlet ✨ – Data Analyst & AI Enthusiast.
-- Feel free to connect on [LinkedIn 🚀](linkedin.com/in/arulraman)
+- Feel free to connect on [LinkedIn 🚀](https://linkedin.com/in/arulraman)
 
