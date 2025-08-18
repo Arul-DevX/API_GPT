@@ -9,7 +9,7 @@ It lets you chat with different open-source and premium AI models in a clean web
 - 🟢 Chat with AI in a Streamlit app
 - 🧠 Uses OpenRouter API (supports many models like Mistral, LLaMA, Gemma, GPT, Claude, etc.)
 - 💾 Maintains conversation history (session state)
-- ⚡ Easy to deploy on Streamlit Cloud or HuggingFace Spaces
+- ⚡ Easy to deploy on Streamlit Cloud
 
 ---
 
