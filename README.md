@@ -25,20 +25,27 @@ jerrybot/
 ## 🔑 Setup Instructions
 
 ### 1. Clone repo
-- git clone https://github.com/Arul-DevX/API_GPT.git
-- cd jerrybot
+  ```bash
+  git clone https://github.com/Arul-DevX/API_GPT.git
+  cd API_GPT
+  ```
 ### 2. Install dependencies
-- pip install -r requirements.txt
+  ```bash
+  pip install -r requirements.txt
+  ```
 ### 3. Add API key
-- Create a file .streamlit/secrets.toml:
-- openrouter_api = "your_api_key_here"
+#### Create a file .streamlit/secrets.toml:
+  ```bash
+  openrouter_api = "your_api_key_here"
+  ```
 ### 4. Run app
-- streamlit run main.py
+  ```bash
+  streamlit run main.py
+  ```
 ## 🌐 Deployment
 - Streamlit Cloud: Connect your GitHub repo, add API key in project settings → Secrets.
-
 ## 📸 Screenshot
-<img width="1917" height="1015" alt="image" src="https://github.com/user-attachments/assets/67d71aed-90a8-4f12-aa10-8e80ecd14d90" />
+[Screenshot 2025-08-18 205244.png]
 
 
 ## 👨‍💻 Author
