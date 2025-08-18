@@ -8,13 +8,23 @@ client = OpenAI(
 )
 
 # Title
-st.title("Chat with AI(OpenRouter)")
+st.title("Jerry - Your AI Buddy (OpenRouter)")
 
 # Initialize session
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "system", "content": "You are Jerry, a helpful assistant."}
     ]
+
+# Sidebar: Model selector
+model = st.sidebar.selectbox(
+    "Choose a model",
+    [
+        "mistralai/mistral-7b-instruct",
+        "meta-llama/llama-2-13b-chat",
+        "google/gemma-7b-it"
+    ]
+)
 
 # Input box
 user_input = st.chat_input("Ask something...")
@@ -34,12 +44,18 @@ if user_input:
         with st.spinner("Thinking..."):
             try:
                 response = client.chat.completions.create(
-                    model="mistralai/mistral-7b-instruct",  # Or try other free models
+                    model=model,
                     messages=st.session_state.messages,
                 )
-                reply = response.choices[0].message.content
+                # Safer content extraction
+                reply = response.choices[0].message.get("content", "")
             except Exception as e:
                 reply = f"❌ Error: {e}"
             st.markdown(reply)
 
+    # Save reply to history
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
+    # Sidebar token usage info
+    if "usage" in response:
+        st.sidebar.write("Tokens used:", response.usage.total_tokens)
