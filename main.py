@@ -42,6 +42,7 @@ if user_input:
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
+            response = None  # ✅ initialize here
             try:
                 response = client.chat.completions.create(
                     model=model,
@@ -56,6 +57,6 @@ if user_input:
     # Save reply to history
     st.session_state.messages.append({"role": "assistant", "content": reply})
 
-    # Sidebar token usage info
-    if "usage" in response:
+    # Sidebar token usage info (only if response is valid)
+    if response and hasattr(response, "usage"):
         st.sidebar.write("Tokens used:", response.usage.total_tokens)
