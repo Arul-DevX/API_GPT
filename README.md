@@ -20,16 +20,12 @@ jerrybot/
 └── .streamlit/
 └── secrets.toml # API keys (DO NOT commit to GitHub!)
 
-yaml
-Copy
-Edit
-
 ---
 
 ## 🔑 Setup Instructions
 
 ### 1. Clone repo
-- git clone https://github.com/<your-username>/jerrybot.git
+- git clone https://github.com/Arul-DevX/API_GPT.git
 - cd jerrybot
 ### 2. Install dependencies
 - pip install -r requirements.txt
