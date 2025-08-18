@@ -42,21 +42,21 @@ if user_input:
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = None  # ✅ initialize here
+            response = None
             try:
                 response = client.chat.completions.create(
                     model=model,
                     messages=st.session_state.messages,
                 )
-                # Safer content extraction
-                reply = response.choices[0].message.get("content", "")
+                # ✅ Correct attribute access
+                reply = response.choices[0].message.content
             except Exception as e:
                 reply = f"❌ Error: {e}"
             st.markdown(reply)
-
+    
     # Save reply to history
     st.session_state.messages.append({"role": "assistant", "content": reply})
-
-    # Sidebar token usage info (only if response is valid)
+    
+    # Sidebar token usage info
     if response and hasattr(response, "usage"):
         st.sidebar.write("Tokens used:", response.usage.total_tokens)
