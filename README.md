@@ -45,7 +45,7 @@ jerrybot/
 ## 🌐 Deployment
 - Streamlit Cloud: Connect your GitHub repo, add API key in project settings → Secrets.
 ## 📸 Screenshot
-![demo screenshot][https://github.com/Arul-DevX/API_GPT/edit/main/Screenshot 2025-08-18 205244.png]
+![demo screenshot](https://github.com/Arul-DevX/API_GPT/edit/main/Screenshot 2025-08-18 205244.png)
 
 
 ## 👨‍💻 Author
