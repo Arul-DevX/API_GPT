@@ -1,5 +1,5 @@
 ###  Try my AI chat App
-![Click Me](https://jerrybot-8majytroskyk9tsjaknlsc.streamlit.app/)
+[Click Me](https://jerrybot-8majytroskyk9tsjaknlsc.streamlit.app/)
 # JerryBot – AI Chat App (OpenRouter + Streamlit)
 
 JerryBot is a simple AI chatbot built with [Streamlit](https://streamlit.io/) and [OpenRouter](https://openrouter.ai).  
