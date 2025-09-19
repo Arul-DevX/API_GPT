@@ -34,7 +34,7 @@ if user_input:
         with st.spinner("Thinking..."):
             try:
                 response = client.chat.completions.create(
-                    model="mistralai/mistral-7b-instruct",  # Or try other free models
+                    model="openrouter/sonoma-sky-alpha",  # Or try other free models
                     messages=st.session_state.messages,
                 )
                 reply = response.choices[0].message.content
@@ -43,3 +43,4 @@ if user_input:
             st.markdown(reply)
 
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
