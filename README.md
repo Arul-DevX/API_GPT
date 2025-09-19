@@ -37,7 +37,11 @@ jerrybot/
   pip install -r requirements.txt
   ```
 ### 3. Add API key
-#### Create a file .streamlit/secrets.toml:
+#### Copy the template and add your API key:
+  ```bash
+  cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+  ```
+#### Then edit .streamlit/secrets.toml and replace with your actual API key:
   ```bash
   openrouter_api = "your_api_key_here"
   ```

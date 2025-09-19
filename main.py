@@ -19,10 +19,11 @@ if "messages" not in st.session_state:
 # Input box
 user_input = st.chat_input("Ask something...")
 
-# Display conversation
+# Display conversation (exclude system messages)
 for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+    if msg["role"] != "system":  # Don't display system messages to users
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
 
 # Process input
 if user_input:
